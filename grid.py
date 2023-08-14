@@ -7,6 +7,17 @@ class Grid:
         self.create_grid()
         self.win = False
         self.winner = None
+        
+    def __str__(self):
+        visual = ''
+        for row in range(GRID_SIZE):
+            for col in range(GRID_SIZE):
+                if self.grid[row][col].state != '':
+                    visual += self.grid[row][col].state
+                else: visual += ' '
+            visual += '\n'
+            
+        return visual
     
     def create_grid(self):
         self.grid = [[0 for row in range(GRID_SIZE)] for col in range(GRID_SIZE)]
@@ -27,6 +38,15 @@ class Grid:
                     o_count += 1
         
         return bool(x_count >= o_count)
+    
+    def check_if_move_possible(self):
+        count = 0
+        for row in self.grid:
+            for box in row:
+                if box.state == '':
+                    count += 1
+        
+        return bool(count)
     
     def check_win(self):
         wins = {'col1': set(),
@@ -49,10 +69,15 @@ class Grid:
                 
         for win in wins.keys():
             if len(wins[win]) == 1 and '' not in wins[win]:
-                self.winner = wins[win]
+                for winner in wins[win]:
+                    self.winner = winner 
                 self.win = True
                 self.select_win(win)
                 break
+        
+    def reset_win(self):
+        self.winner = ''
+        self.win = False
         
     def select_win(self, win):
         if win == 'diagonal1':
