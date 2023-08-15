@@ -1,4 +1,5 @@
 import pygame
+import sys
 from settings import *
 
 class Menu:
@@ -8,7 +9,7 @@ class Menu:
         self.main_menu()
         
     def main_menu(self):
-        options = ['PLAYER VS PLAYER', 'PLAYER VS AI']
+        options = ['PLAYER VS PLAYER', 'PLAYER VS AI', "EXIT"]
         for num, option in enumerate(options):
             self.buttons.append(Button(option, BUTTON_WIDTH, BUTTON_HEIGHT, (WIDTH//2 - BUTTON_WIDTH // 2, HEIGHT/4 + num * (BUTTON_HEIGHT + BUTTON_SPACING))))
         
@@ -16,13 +17,16 @@ class Menu:
         if self.buttons[PVP].active:
             self.game.restart()
             self.game.pause = False
-            self.game.ai = True
+            self.game.ai = False
             self.buttons[PVP].active = False
         elif self.buttons[PVA].active:
             self.game.restart()
             self.game.pause = False
             self.game.ai = True
             self.buttons[PVA].active = False
+        elif self.buttons[EXIT].active:
+            pygame.quit()
+            sys.exit()
    
     def draw(self):
         for button in self.buttons:
