@@ -1,4 +1,3 @@
-import pygame
 from settings import *
 
 class Minimax:
@@ -16,7 +15,6 @@ class Minimax:
         
         if isMax:
             best = -1000
-            
             for row in range(GRID_SIZE):
                 for col in range(GRID_SIZE):
                     if self.board.grid[row][col].state == '':
@@ -25,12 +23,9 @@ class Minimax:
                         best = max(best, self.minimax(depth + 1, not isMax, ai))
                         
                         self.board.grid[row][col].state = ''
-                      
             return best
-        
         else:
             best = 1000
-            
             for row in range(GRID_SIZE):
                 for col in range(GRID_SIZE):
                     if self.board.grid[row][col].state == '':
@@ -43,7 +38,6 @@ class Minimax:
                         best = min(best, self.minimax(depth + 1, not isMax, ai))
                         
                         self.board.grid[row][col].state = ''
-            
             return best
         
     def find_best_move(self, ai):
@@ -54,13 +48,10 @@ class Minimax:
             for col in range(GRID_SIZE):
                  if self.board.grid[row][col].state == '':
                      self.board.grid[row][col].state = ai
-                     
                      move_val = self.minimax(0, False, ai)
-                     
                      self.board.grid[row][col].state = ''
                      
                      if move_val > best_val:
-                         
                          best_move = (row, col)
                          best_val = move_val
                          
