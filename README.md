@@ -20,10 +20,12 @@ The purpose of this project is to create an interactive Tic-Tac-Toe game where u
 
 ### Player vs Player
 Here's a demo of the game played in Player vs Player mode:
+
 ![App Demo](https://github.com/Simon125q/TicTacToe_AI/blob/main/other/vid_01.gif)
 
 ### Player vs AI
 Here's a demo of the game played against the AI:
+
 ![AppI Demo](https://github.com/Simon125q/TicTacToe_AI/blob/main/other/vid_02.gif)
 
 ## Screenshots
