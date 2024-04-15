@@ -29,7 +29,6 @@ Here's a demo of the game played against the AI:
 ![AppI Demo](https://github.com/Simon125q/TicTacToe_AI/blob/main/other/vid_02.gif)
 
 ## Screenshots
-Below are some screenshots showing the game interface:
 ![App Screenshot](https://github.com/Simon125q/TicTacToe_AI/blob/main/other/scr_01.png)
 ![App Screenshot](https://github.com/Simon125q/TicTacToe_AI/blob/main/other/scr_02.png)
 
@@ -41,4 +40,4 @@ To run this game locally, follow these steps:
 4. Run `python tictactoe.py` to start the game.
 
 ## Lessons Learned
-This project was instrumental in enhancing my understanding of Python and game development. Implementing the minimax algorithm deepened my knowledge of AI and game theory
+This project enhanced my understanding of Python. Implementing the minimax algorithm deepened my knowledge of AI and more advanced algorithms
